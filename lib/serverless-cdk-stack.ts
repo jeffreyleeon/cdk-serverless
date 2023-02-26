@@ -1,6 +1,6 @@
 import * as cdk from 'aws-cdk-lib';
 import { Construct } from 'constructs';
-// import * as sqs from 'aws-cdk-lib/aws-sqs';
+import * as widget_service from '../lib/widget_service';
 
 export class ServerlessCdkStack extends cdk.Stack {
   constructor(scope: Construct, id: string, props?: cdk.StackProps) {
@@ -12,5 +12,6 @@ export class ServerlessCdkStack extends cdk.Stack {
     // const queue = new sqs.Queue(this, 'ServerlessCdkQueue', {
     //   visibilityTimeout: cdk.Duration.seconds(300)
     // });
+    new widget_service.WidgetService(this, 'Widgets');
   }
 }
